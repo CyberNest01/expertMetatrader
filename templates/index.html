@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="account">login number: </label>
+        <input type="number" name="account"  required>
+        <br>
+        <label for="password">password: </label>
+        <input type="password" name="password"  required>
+        <br>
+        <label for="file_name">file name: </label>
+        <input type="text" name="file_name"  required>
+        <br>
+        <label for="server">server: </label>
+        <input type="text" name="server"  required>
+        <br>
+        <label for="investor">investor: </label>
+        <input type="text" name="investor"  required>
+        <br>
+        <input type="submit" value="Submit!">
+    </form>
+</body>
+</html>
