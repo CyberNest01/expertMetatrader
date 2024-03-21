@@ -2,6 +2,7 @@ Django
 django-environ
 psycopg2-binary
 celery==5.3.5
+requests
 django-celery-results==2.4.0
 redis==4.5.1
 django-redis==5.2.0
