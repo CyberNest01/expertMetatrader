@@ -9,3 +9,4 @@ django-redis==5.2.0
 MetaTrader5
 djangorestframework
 django-cors-headers
+gevent

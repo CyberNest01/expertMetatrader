@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from celeryMetaTrader.index import index, get_order_history
+from celeryMetaTrader.index import index, get_order_history, get_meta_data
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('history/order/<int:account>/', get_order_history, name='history--order')
+    path('history/order/<int:account>/', get_order_history, name='history--order'),
+    path('get/meta/data/', get_meta_data, name='get-meta-data')
 ]

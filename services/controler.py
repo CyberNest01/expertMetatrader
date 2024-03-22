@@ -2,7 +2,7 @@ from services.meta_trader5 import MetaTrader5
 
 
 
-class MetaTraderControler(MetaTrader5):
+class MetaTrader5Controler(MetaTrader5):
 
     def __init__(self, account: str, password: str, server: str, file_name: str) -> None:
         self.path_terminal = f'C:/Program Files/MetaTrader 5/{file_name}/terminal64.exe'

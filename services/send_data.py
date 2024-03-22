@@ -13,10 +13,10 @@ class SendData:
     def __req(self, method, action_apt, data):
         kwargs = {}
         if method == 'post':
-            kwargs['data'] = json.dumps(data)
+            kwargs['json'] = data
         else:
             kwargs['params'] = data
-        request = requests.request(self.ENDPOINT + action_apt, **kwargs)
+        request = requests.request(method, self.ENDPOINT + action_apt, **kwargs)
         return request
 
     def request(self):
@@ -31,9 +31,9 @@ class SendData:
         data_list = []
         context = {}
         for item in self.data['data']:
-            data_list.append(self.meta.get_symbol(item._asdict()['symbol']))
+            data_list.append(self.meta.get_symbol(item._asdict()['symbol'])['data'])
         context.update({self.config.account: {
             'data': data_list,
-            'equity': self.meta.send_equity()
+            'equity': self.meta.send_equity()['data']['equity']
         }})
         return context
